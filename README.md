@@ -12,7 +12,7 @@ Clone the structure of folders on your computer. Your must have at the same leve
 11_results/
 ```
 
-The contents of folders 00_ld/ and 00_models/ should not be modified, they contain the information to compute the limb darkening of the emergent spectrum of each individual cell, and the synthetic spectra from which the spectrum of each shell is created by interpolation.
+The contents of folders ```00_ld/``` and ```00_models/``` should not be modified, they contain the information to compute the limb darkening of the emergent spectrum of each individual cell, and the synthetic spectra from which the spectrum of each shell is created by interpolation.
 
 ## How to run the code
 
