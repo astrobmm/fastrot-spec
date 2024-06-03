@@ -18,18 +18,23 @@ The contents of folders ```00_ld/``` and ```00_models/``` should not be modified
 
 The codes are written in fortran77, so you must have a fortran compiler in your system. Go to folder 00_codes and compile the programs by typing:
 
+```
 gfortran -std=legacy star3d.f -o star3d.exe
 gfortran -std=legacy spec3d.f -o spec3d.exe
 gfortran -std=legacy normspec.f -o normspec.exe
+```
 
-Make sure the script fastrot-spec.sh has the option to be an executable, if not, type:
+Make sure the script ```fastrot-spec.sh``` has the option to be an executable, if not, type:
 
-chmod u+x 
+```
+chmod u+x fastrot-spec.sh
+```
 
-To run the code, with the input files given in the directory just type:
+To run the codes, using the input files given in the directory just type:
 
+```
 ./fastrot-spec.sh
+```
+And that's it! Your results will be in folder ```11_results/``` 
 
-And that's it! Your results will be in folder 11_results/. 
-
-A description of the input and output files can be found in 00_codes/README_inputs_outputs.txt
+A description of the input and output files can be found in ```00_codes/README_inputs_outputs.txt```
