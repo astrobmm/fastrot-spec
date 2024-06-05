@@ -1,5 +1,5 @@
 # fastrot-spec
-Computes the surface parameters -radius, temperature, and effective gravity as a function of the latitude- of rapidly rotating stars with radiative envelopes, and builds their synthetic spectra. The parameterisation of the stellar surface is done using the semianalytical approach of the ESTER model presented by Espinosa-Lara and Rieutord (2011); that approach avoid any discussion about the gravity darkening exponent, although the Von Zeipel approximation, beta=0.25, is also included for comparison. The computation of the synthetic spectra are done using the atlas9 and synthe suite of codes by Kurucz (2014).
+Computes the surface parameters -radius, temperature, and effective gravity as a function of the latitude- of rapidly rotating stars with radiative envelopes, and builds their synthetic spectra. The parameterisation of the stellar surface is done using the semianalytical approach of the ESTER model presented by Espinosa-Lara and Rieutord (2011); that approach avoid any discussion about the gravity darkening exponent. The computation of the synthetic spectra is done using the atlas9 and synthe suite of codes by Kurucz (2014).
 
 ## Installation & Requirements
  
@@ -11,8 +11,7 @@ Clone the structure of folders on your computer. Your must have at the same leve
 00_models/
 11_results/
 ```
-
-The contents of folders ```00_ld/``` and ```00_models/``` should not be modified, they contain the information to compute the limb darkening of the emergent spectrum of each individual cell, and the synthetic spectra from which the spectrum of each shell is created by interpolation.
+Unzip the eight zip files in folder ```00_models``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). The contents of folders ```00_ld/``` and ```00_models/``` should not be modified or touched.
 
 ## How to run the code
 
