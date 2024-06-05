@@ -11,7 +11,7 @@ Clone the structure of folders on your computer. Your must have at the same leve
 00_models/
 11_results/
 ```
-Unzip the eight zip files in folder ```00_models``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). The contents of folders ```00_ld/``` and ```00_models/``` should not be modified or touched.
+Unzip the 16 zip files in folder ```00_models``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). The contents of folders ```00_ld/``` and ```00_models/``` should not be modified or touched.
 
 ## How to run the code
 
