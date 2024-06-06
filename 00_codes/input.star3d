@@ -1,0 +1,14 @@
+* inclination [deg, i=90 equator on]    
+* Mstar       [solar masses]            
+* T(pole)     [polar temperature (K)]    
+* R(equator)  [solar radii]              
+* omega       [Omega/Omega_Kepler]      
+* Metallicity [-2.5,-2.0,-1.5,-1.0,-0.5,+0.0,+0.2,+0.5]        
+*             [Important: use '+' sign for +0.0] 
+*
+5.0     
+2.15    
+10000   
+2.726   
+0.632   
+-0.5    
