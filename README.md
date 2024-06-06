@@ -23,13 +23,19 @@ gfortran -std=legacy spec3d.f -o spec3d.exe
 gfortran -std=legacy normspec.f -o normspec.exe
 ```
 
-Make sure the script ```fastrot-spec.sh``` has the option to be an executable, if not, type:
+Make sure the script ```fastrot-spec.sh``` has the option to be an executable, type 
+
+```
+ls -l fastrot-spec.sh
+```
+
+and see if you get something like ```-rwx------```,  if not, type:
 
 ```
 chmod u+x fastrot-spec.sh
 ```
 
-To run the codes, using the input files given in the directory just type:
+To run the codes, using the input files given in the directory, just type:
 
 ```
 ./fastrot-spec.sh
