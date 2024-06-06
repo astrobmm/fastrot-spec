@@ -15,7 +15,7 @@ Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic sp
 
 ## How to run the code
 
-The codes are written in fortran77, so you must have a fortran compiler in your system. Go to folder 00_codes and compile the programs by typing:
+The codes are written in fortran77, so you must have a fortran compiler in your system. Go to folder ```00_codes/``` and compile the programs by typing:
 
 ```
 gfortran -std=legacy star3d.f -o star3d.exe
