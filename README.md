@@ -3,7 +3,7 @@ Computes the surface parameters -radius, temperature, and effective gravity as a
 
 ## Installation & Requirements
  
-Clone the above structure of folders on your computer. Your must have at the same level these four directories:
+Clone the above structure of folders on your computer, and create an additional folde ```11_results/```. Your must have at the same level these four directories:
 
 ```
 00_codes/
