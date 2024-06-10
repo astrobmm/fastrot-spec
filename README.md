@@ -3,7 +3,7 @@ Computes the surface parameters -radius, temperature, and effective gravity as a
 
 ## Installation & Requirements
  
-Clone the above structure of folders on your computer, and create an additional folder ```11_results/```. Your must have at the same level these four directories:
+Clone the above structure of folders on your computer. Your must have at the same level these four directories:
 
 ```
 00_codes/
@@ -11,7 +11,7 @@ Clone the above structure of folders on your computer, and create an additional 
 00_models/
 11_results/
 ```
-Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). The contents of folders ```00_ld/``` and ```00_models/``` should not be modified or touched.
+Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). 
 
 ## How to run the code
 
@@ -22,6 +22,8 @@ gfortran -std=legacy star3d.f -o star3d.exe
 gfortran -std=legacy spec3d.f -o spec3d.exe
 gfortran -std=legacy normspec.f -o normspec.exe
 ```
+
+Some tests were made on Macs laptops, a fortran compiler such is the one in ```https://github.com/fxcoudert/gfortran-for-macOS/releases``` seems to work, using the same commmand as above.
 
 Make sure the script ```fastrot-spec.sh``` has the option to be an executable, type 
 
