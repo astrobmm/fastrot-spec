@@ -25,9 +25,8 @@ gfortran -std=legacy normspec.f -o normspec.exe
 
 Some tests were made on Macs laptops, a fortran compiler such is the one in 
 
-```
-https://github.com/fxcoudert/gfortran-for-macOS/releases
-```
+[https://github.com/fxcoudert/gfortran-for-macOS/releases]https://github.com/fxcoudert/gfortran-for-macOS/releases
+
 
 seems to work, using the same commmand as above.
 
