@@ -3,15 +3,16 @@ Computes the surface parameters -radius, temperature, and effective gravity as a
 
 ## Installation & Requirements
  
-Clone the above structure of folders on your computer. Your must have at the same level these four directories:
+Clone the above structure of folders on your computer. Your must have at the same level these five directories:
 
 ```
 00_codes/
 00_ld/
 00_models/
+00_python/
 11_results/
 ```
-Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). 
+Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). WARNING: Mac computers unzip zip files in two different ways: is you use ``ùnzip``` from the terminal, the files are stored in the current directory, however if you decompress the zip file clicking on the icon, a folder with the name of the zip is created in the current directory and the files are stored there. Check that the models are in ```00_models/``` before running the code.
 
 ## How to run the code
 
@@ -26,7 +27,6 @@ gfortran -std=legacy normspec.f -o normspec.exe
 Some tests were made on Macs laptops, a fortran compiler such is the one in 
 
 [https://github.com/fxcoudert/gfortran-for-macOS/releases]
-
 
 seems to work, using the same commmand as above.
 
@@ -48,5 +48,13 @@ To run the codes, using the input files given in the directory, just type:
 ./fastrot-spec.sh
 ```
 And that's it! Your results will be in folder ```11_results/``` 
+
+Another option is to use the two python scripts stored in ```00_python/```. ```run_from_python.py``` runs the whole code from the terminal, and ```functions_python.py``` allows the user
+to call the code from an independent python code, e.g. if a grid of models with different input parameters needs to be built, that function would link the python code written by the user, 
+which generates a set of input parameters, with the fortran codes.
+
+
+
+
 
 A description of the input and output files can be found in ```00_codes/README_inputs_outputs.txt```
