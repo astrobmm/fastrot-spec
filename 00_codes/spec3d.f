@@ -380,7 +380,7 @@ C    For p05 there are 59 temperatures
      +         40000,42500,45000/
       
       if(kcode.eq.'m25'.or.kcode.eq.'m20'.or.kcode.eq.'m15'.or.
-     +     kcode.eq.'m05'.or.kcode.eq.'p02') then
+     +     kcode.eq.'m10'.or.kcode.eq.'m05'.or.kcode.eq.'p02') then
            ntgrid=61
            do i=1,ntgrid
               t(i)=trest(i)
