@@ -30,23 +30,28 @@ Some tests were made on Macs laptops, a fortran compiler such is the one in
 
 seems to work, using the same commmand as above.
 
-Make sure the script ```fastrot-spec.sh``` has the option to be an executable, type 
+Make sure the scripts ```fastrot-highres-spec.sh``` and ```fastrot-lowres-spec``` have  the option to be executable, type 
 
 ```
-ls -l fastrot-spec.sh
+ls -l *.sh
 ```
 
 and see if you get something like ```-rwx------```,  if not, type:
 
 ```
-chmod u+x fastrot-spec.sh
+chmod u+x *.sh
 ```
 
 To run the codes, using the input files given in the directory, just type:
 
 ```
-./fastrot-spec.sh
+./fastrot-highres-spec.sh
 ```
+or
+```
+./fastrot-lowres-spec.sh
+```
+
 And that's it! Your results will be in folder ```11_results/``` 
 
 Another option is to use the two python scripts stored in ```00_python/```. ```run_from_python.py``` runs the whole code from the terminal, and ```functions_python.py``` allows the user
