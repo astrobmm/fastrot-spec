@@ -1,7 +1,7 @@
 # fastrot-spec
 Computes the surface parameters -radius, temperature, and effective gravity as a function of the latitude- of rapidly rotating stars with radiative envelopes, and builds their synthetic spectra. The parameterisation of the stellar surface is done using the semianalytical approach of the ESTER model presented by Espinosa-Lara and Rieutord (2011); that approach avoids any discussion about the gravity darkening exponent. 
 
-The computation of the synthetic spectra is done using the atlas9 and synthe suite of codes by Kurucz (2014).
+The computation of the synthetic spectra is done using the atlas9 and synthe suite of codes by Kurucz (2014). Three main codes are provided in folder ```00_codes/```, namely 
 
 ## Installation & Requirements
  
