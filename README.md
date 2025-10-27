@@ -20,7 +20,8 @@ The codes are written in fortran77, so you must have a fortran compiler in your 
 
 ```
 gfortran -std=legacy star3d.f -o star3d.exe
-gfortran -std=legacy spec3d.f -o spec3d.exe
+gfortran -std=legacy highrespec3d.f -o highrespec3d.exe
+gfortran -std=legacy lowrespec3d.f -o lowrespec3d.exe
 gfortran -std=legacy normspec.f -o normspec.exe
 ```
 
@@ -30,7 +31,7 @@ Some tests were made on Macs laptops, a fortran compiler such is the one in
 
 seems to work, using the same commmand as above.
 
-Make sure the scripts ```fastrot-highres-spec.sh``` and ```fastrot-lowres-spec``` have  the option to be executable, type 
+Make sure the scripts ```fastrot-highres-spec.sh``` and ```fastrot-lowres-spec``` have  the option to be executable, type: 
 
 ```
 ls -l *.sh
