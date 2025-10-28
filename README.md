@@ -11,6 +11,7 @@ Clone the following structure of folders on your computer. Your must have at the
 00_codes/
 00_ld/
 00_models/
+00_pckfiles/
 11_results/
 ```
 Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). WARNING: Mac computers unzip zip files in two different ways: is you use ```unzip``` from the terminal, the uncompressed files will be stored in the current directory, however, if you decompress the zip file clicking on the icon, a folder with the name of the zip will be created in the current directory and the files will be stored there. Check that the models are in ```00_models/``` before running the code.
