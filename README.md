@@ -14,7 +14,9 @@ Clone the following structure of folders on your computer. Your must have at the
 00_pckfiles/
 11_results/
 ```
-Unzip the 16 zip files in folder ```00_models/``` which contain the synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). WARNING: Mac computers unzip zip files in two different ways: is you use ```unzip``` from the terminal, the uncompressed files will be stored in the current directory, however, if you decompress the zip file clicking on the icon, a folder with the name of the zip will be created in the current directory and the files will be stored there. Check that the models are in ```00_models/``` before running the code.
+Download and unzip the 16 zip files in folder ```00_models/``` which contain the high-resolution synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). These are used to compute the emergent high-resolution spectrum of the target object using the programme ```highrespec3d```.WARNING: Mac computers unzip zip files in two different ways: is you use ```unzip``` from the terminal, the uncompressed files will be stored in the current directory, however, if you decompress the zip file clicking on the icon, a folder with the name of the zip will be created in the current directory and the files will be stored there. Check that the models are in ```00_models/``` before running the code.
+
+Download and unzip the two zip files in folder ```00_pckfiles/``` which contain the collection of low-resolution Castelli-Kurucz models for the eigh metallicities specified in the above paragraph. These models are used to compute the low-resolution spectrum using the program ```lowrespec3d```.
 
 ## How to run the codes
 
