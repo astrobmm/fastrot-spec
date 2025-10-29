@@ -8,7 +8,8 @@ This procedure is described in the paper "Surface parameterisation and spectral 
 October 2025: Updates and improvements have been added with respect to the first version of the codes, made publicly available in 2024. Use the new versions of the codes and scripts in case the original ones are used.
 
   - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
-  - Program ```star3d``` includes a small modification required for the new code lowrespec3d. 
+  - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d```.
+  - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations. 
 
 ## Installation & Requirements
  
