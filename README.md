@@ -5,7 +5,10 @@ The computation of the synthetic spectrum is done using the ```atlas9``` and ```
 
 This procedure is described in the paper "Surface parameterisation and spectral synthesis of rapidly rotating stars. Vega as a test bed" (Montesinos, B., 2024, Astronomy and Astrophysics, 688, A97). 
 
-2025 October: Updates and improvements have been added with respect to the first version of the codes, made publicly available in 2024. It is highly recommended to use the new version of the codes and scripts.
+October 2025: Updates and improvements have been added with respect to the first version of the codes, made publicly available in 2024. Use the new versions of the codes and scripts in case the original ones are used.
+
+  - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
+  - Program ```star3d``` includes a small modification required for the new code lowrespec3d. 
 
 ## Installation & Requirements
  
