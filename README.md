@@ -3,13 +3,16 @@ This suite of codes computes the surface parameters -radius, temperature, and ef
 
 The parameterisation of the stellar surface is done using the semianalytical approach of the ESTER model presented by Espinosa-Lara and Rieutord (2011); that approach avoids any discussion about the gravity darkening exponent. The computation of the synthetic spectrum is done using the ```atlas9``` and ```synthe``` suite of codes by Kurucz (2014). Three main codes are provided in folder ```00_codes/```, namely ```star3d```, ```highrespec3d```, and ```lowrespec3d```. ```star3d``` computes the parameterization of the stellar surface that will be used by the other two programs to compute the high-resolution (3600-5500 A, R=100,000) and low-resolution (90-1.0e+6 A, variable resolution with wavelength, according to that of the Castelli-Kurucz ODFNEW models). 
 
-This procedure is described in the paper "Surface parameterisation and spectral synthesis of rapidly rotating stars. Vega as a test bed" (Montesinos, B., 2024, Astronomy and Astrophysics, 688, A97). 
+The whole procedure is described in the paper "Surface parameterisation and spectral synthesis of rapidly rotating stars. Vega as a test bed" (Montesinos, B., 2024, Astronomy and Astrophysics, 688, A97). 
 
-October 2025: Updates and improvements have been added with respect to the first version of the codes, made publicly available in 2024. Use the new versions of the codes and scripts in case the original ones are used.
+June 2024: Programs ```star3d```, ```spec3d``` and ```normspec``` provided. Range of temperatures for the models: 7000-11000 K.
+
+October 2025: Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones are used; the new codes supersede the old ones. 
 
   - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
-  - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d```.
-  - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations. 
+  - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d``` to work.
+  - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations.
+  - In progress: the grid of models to allow computations in a wider interval will be updated soon.
 
 ## Installation & Requirements
  
