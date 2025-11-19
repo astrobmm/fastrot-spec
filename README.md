@@ -1,4 +1,5 @@
 # fastrot-spec
+
 This suite of codes computes the surface parameters -radius, temperature, and effective gravity as a function of the latitude- of rapidly rotating stars with radiative envelopes, and builds their synthetic spectra. 
 
 The parameterisation of the stellar surface is done using the semianalytical approach of the ESTER model presented by Espinosa-Lara and Rieutord (2011); that approach avoids any discussion about the gravity darkening exponent. The computation of the synthetic spectrum is done using the ```atlas9``` and ```synthe``` suite of codes by Kurucz (2014). Three main codes are provided in folder ```00_codes/```, namely ```star3d```, ```highrespec3d```, and ```lowrespec3d```. ```star3d``` computes the parameterization of the stellar surface that will be used by the other two programs to compute the high-resolution (3600-5500 A, R=100,000) and low-resolution (90-1.0e+6 A, variable resolution with wavelength, according to that of the Castelli-Kurucz ODFNEW models). 
@@ -12,11 +13,21 @@ October 2025: Updates and improvements have been added with respect to the first
   - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
   - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d``` to work.
   - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations.
-  - In progress: the grid of models to allow computations in a wider interval will be updated soon.
+
+November 2025: 
+
+  - Small modifications to create auxiliary files have been done on ```lowrespec3d``` and ```highrespec3d```, so update these programs if you are using
+    previous versions.
+  - The grid of synthetic spectra that is required to compute the composite final spectrum of a given object has been enlarged. See all the information in the
+    README file in folder ```00_models/```.
+  - Two additional programs have been added: ```grid10``` and ```mergefiles``` mainly devoted to generate some files for plotting purposes (see the information in
+    the README file in folder ```00_codes/```.
+  - Python programs for plotting useful graphs and pdf examples of the output of these programs are provided in folder ```22_for_plotting/```. This is a new folder,
+    follow the instruction given in the nexr paragraph.
 
 ## Installation & Requirements
  
-Clone the following structure of folders on your computer. Your must have at the same level these five directories:
+Clone the following structure of folders on your computer. Your must have at the same level these six directories:
 
 ```
 00_codes/
@@ -24,10 +35,13 @@ Clone the following structure of folders on your computer. Your must have at the
 00_models/
 00_pckfiles/
 11_results/
+22_for_plotting/
 ```
-Download and unzip the 16 zip files in folder ```00_models/``` which contain the high-resolution synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). These are used to compute the emergent high-resolution spectrum of the target object using the programme ```highrespec3d```.WARNING: Mac computers unzip zip files in two different ways: is you use ```unzip``` from the terminal, the uncompressed files will be stored in the current directory, however, if you decompress the zip file clicking on the icon, a folder with the name of the zip will be created in the current directory and the files will be stored there. Check that the models are in ```00_models/``` before running the code.
+Download and unzip the zip files in folder ```00_models/``` which contain the high-resolution synthetic spectra computed for eight values of the metallicity, namely [M/H]= -2.5, -2.0, -1.5, -1.0, -0.5, +0.0, +0.2, +0.5 (Kurucz's way of labelling this files has been used: m25, m20, m15, m05, p00, p02, p05 ('m', 'p' stand for 'minus', 'plus'). These are used to compute the emergent high-resolution spectrum of the target object using the programme ```highrespec3d```.WARNING: Mac computers unzip zip files in two different ways: is you use ```unzip``` from the terminal, the uncompressed files will be stored in the current directory, however, if you decompress the zip file clicking on the icon, a folder with the name of the zip will be created in the current directory and the files will be stored there. Check that the models are in ```00_models/``` before running the code.
 
 Download and unzip the two zip files in folder ```00_pckfiles/``` which contain the collection of low-resolution Castelli-Kurucz models for the eigh metallicities specified in the above paragraph. These models are used to compute the low-resolution spectrum using the program ```lowrespec3d```.
+
+Download the files in folder ```22_for_plotting```.
 
 ## How to run the codes
 
@@ -38,6 +52,8 @@ gfortran -std=legacy star3d.f -o star3d.exe
 gfortran -std=legacy highrespec3d.f -o highrespec3d.exe
 gfortran -std=legacy lowrespec3d.f -o lowrespec3d.exe
 gfortran -std=legacy normspec.f -o normspec.exe
+gfortran -std=legacy grid10.f -o grid10.exe
+gfortran -std=legacy mergefiles.f -o mergefiles.exe
 ```
 
 Some tests were made on Macs laptops, a fortran compiler such is the one in 
@@ -46,7 +62,7 @@ Some tests were made on Macs laptops, a fortran compiler such is the one in
 
 seems to work, using the same commmand as above.
 
-Make sure the scripts ```fastrot-highres-spec.sh``` and ```fastrot-lowres-spec``` have  the option to be executable, to check that type: 
+Make sure the scripts ```fastrot-highres-spec.sh``` and ```fastrot-lowres-spec.sh``` have  the option to be executable, to check that type: 
 
 ```
 ls -l *.sh
@@ -58,7 +74,7 @@ and see if you get something like ```-rwx------```,  if that is not the case, ty
 chmod u+x *.sh
 ```
 
-To run the codes, use the input files given in the directory ```00_codes/```, just type:
+To run the codes, use the input files given in the directory ```00_codes/```, and just type:
 
 ```
 ./fastrot-highres-spec.sh
@@ -68,8 +84,10 @@ or
 ./fastrot-lowres-spec.sh
 ```
 
-And that's it! Your results will be in folder ```11_results/``` 
+And that's it! Your results will be in folder ```11_results/``` and files suitable to be plotted will be in folder ```22_for_plotting/```.
 
 Another option is to use the two python scripts stored in ```00_codes/```. ```run_from_python.py``` runs the whole code from the terminal, and ```functions_python.py``` allows the user to call the code from an independent python code, e.g. if a grid of models with different input parameters needs to be built, that function would link the python code written by the user, which generates a set of input parameters, with the fortran codes.
 
-A description of the input and output files can be found in ```00_codes/README_inputs_outputs.txt```
+A description of the input and output files can be found in ```00_codes/README_inputs_outputs.txt```.
+
+A description of the synthetic models and the inventory of what is stored there can be found in ```00_models/ ```.
