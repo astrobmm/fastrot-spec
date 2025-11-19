@@ -45,7 +45,7 @@ Download and unzip the zip files in folder ```00_models/``` which contain the hi
 
 Download and unzip the two zip files in folder ```00_pckfiles/``` which contain the collection of low-resolution Castelli-Kurucz models for the eigh metallicities specified in the above paragraph. These models are used to compute the low-resolution spectrum using the program ```lowrespec3d```.
 
-Download the files in folder ```22_for_plotting```.
+Download the files in folder ```22_for_plotting/```.
 
 ## How to run the codes
 
