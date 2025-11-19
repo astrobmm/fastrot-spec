@@ -1,4 +1,10 @@
-DESCRIPTION OF THE OUTPUT FILES FROM EACH PROGRAM
+------------------------------------------------------------
+  DESCRIPTION OF THE PROGRAMS, INPUTS AND RELEVANT OUTPUTS
+------------------------------------------------------------
+
+N.B: Some auxiliary files are created by the programs, but
+are not relevant regarding the outputs of interest to the 
+user, therefore are not listed here.
 
 **************
 PROGRAM star3d
@@ -82,10 +88,10 @@ This will be the name of the output file for highrespec3d
 
 lowrespec3d will give as output:
 
-low-resin5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.a
+low-res-in5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.a
 
 The program itself takes the name from input.spec3d and adds
-the prefix 'low-res' (see below)
+the prefix 'low-res-' (see below)
 
 -------
 tiles.a [to be read by both highrespec3d and lowrespec3d]
@@ -107,24 +113,6 @@ colat-r-t.a [output for plotting purposes]
 Col. 1: colatitude (rad)
 Col. 2: stellar radius (normalized to R_equatorial)
 Col. 3: photospheric temperature (K)
-
-----------
-xyparams.a [output for plotting purposes]
-----------
-File useful if one wishes to plot several 3D quantities
-of the stellar surface in 2D graphs. For each cell, it
-contains:
-
-Col. 1: x coordinate (in units of R_equator)
-Col. 2: y coordinate (in units of R_equator)
-Col. 3: temperature (K)
-Col. 4: log g (g: effective gravity in cgs units)
-Col. 5: angle between the normal to each tile and the line
-        of sight
-Col. 6: projected area as seen by the observer
-Col. 7: angle between the normal to the differential surface
-        element and the z direction (COMPUTED before the star
-	is tilted by an angle i)
 
 ----------------------------------------------------------
 in5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.params
@@ -186,9 +174,9 @@ File created by program star3d, see above
 
 + Output file:
 
------------------------------------------------------------
-lowresin5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.a
------------------------------------------------------------
+-------------------------------------------------------------
+low-res-in5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.a
+-------------------------------------------------------------
 
 [Name given as example] Composite final spectrum
 of the oblate- rapidly-rotating star:
@@ -224,3 +212,32 @@ in5.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v021.n1
 
 Col. 1: Wavelength (angstroms)
 Col. 2: Normalized intensity (continuum I=1.0)
+
+**************
+PROGRAM grid10
+**************
+
+Creates a grid of parallels and meridians separared by
+10 degrees. It reads the relevant parameters from input.star3d
+and gives as outputs the files mer10.a and par10.a that are 
+used for plotting putposes (see the information and python 
+program plot-4panels.py in folder 22_for_plotting/)
+
+******************
+PROGRAM mergefiles
+******************
+
+Merges the contents of the file xyparams.a, created by star3d
+and limbdark.a created by either lowrespec3d and highrespec3d
+and creates a file called 4plots.a used for plotting purposes
+(see the information and python program plot-4panels.py in 
+folder 22_for_plotting/). The file contains six columns:
+
+Col. 1: x coordinate (in units of R_equator)
+Col. 2: y coordinate (in units of R_equator)
+Col. 3: temperature (K)
+Col. 4: log g (g: effective gravity in cgs units)
+Col. 5: projected velocity of each cell as seen by 
+        the observer (km/s)
+Col. 6: Limb darkening coefficient at 5000 A
+
