@@ -90,4 +90,4 @@ Another option is to use the two python scripts stored in ```00_codes/```. ```ru
 
 A description of the input and output files can be found in ```00_codes/README_inputs_outputs.txt```.
 
-A description of the synthetic models and the inventory of what is stored there can be found in ```00_models/ ```.
+A description of the synthetic models, and the inventory of what is stored there, can be found in ```00_models/README_Inventory.txt```.
