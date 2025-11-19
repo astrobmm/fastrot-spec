@@ -10,7 +10,7 @@ C     This program normalizes the spectrum created by spec3d
       real*4 w(50000),f(50000)
       real*4 wsub(5000),fsub(5000)
       real*4 c1(25),c2(25)
-      real*4 wm,fm,wmax(25),fmax(25)
+      real*4 wm,fm,fmold,wmax(25),fmax(25)
       real*4 fm1,fmn,fm2(25)
       real*4 wint,fint
       
@@ -40,22 +40,25 @@ C     This program normalizes the spectrum created by spec3d
       close(unit=1)
 
       do j=1,nc
-         nsub=0
+         fmold=-1.0e+9
          do i=1,np
-         if(w(i).gt.c2(nc)) goto 10
          if(w(i).gt.c1(j).and.w(i).le.c2(j)) then
-               nsub=nsub+1
-               wsub(nsub)=w(i)
-               fsub(nsub)=f(i)
+            fm=max(fmold,f(i))
+            if(fm.ne.fmold) wm=w(i)
+            wmax(j)=wm
+            fmax(j)=fm
+            fmold=fm
          end if
+         if(w(i).gt.c2(j)) goto 9
          end do
-               call maximum(nsub,wsub,fsub,wm,fm)
-               wmax(j)=wm
-               fmax(j)=fm
-      end do
+ 9    end do
 
+      do j=1,nc
+         write(33,*) wmax(j),fmax(j)
+      end do
+      
  10   call dota(ifile,idot)
-         
+      
       ofile=ifile(1:idot-1)//'.n1'
       open(unit=2,file=ofile,form='formatted',status='unknown')
       
@@ -66,12 +69,13 @@ C     This program normalizes the spectrum created by spec3d
 
       do i=1,np
          wint=w(i)
+         if(wint.gt.5495.0) goto 101
          call splint(wmax,fmax,fm2,nc,wint,fint)
          write(2,100) wint,f(i)/fint
  100  format(f11.5,2x,1pe13.6)         
       end do
 
-      close(unit=2)
+ 101  close(unit=2)
 
       write(*,6) ofile
  6    format(/,'Normalized spectrum: ',a60,/)
@@ -79,25 +83,6 @@ C     This program normalizes the spectrum created by spec3d
       stop
       end
       
-      subroutine maximum(nsub,wsub,fsub,wm,fm)
-
-      implicit none
-
-      integer i,nsub
-
-      real*4 wsub(nsub),fsub(nsub),wm,fm
-
-      fm=-1.0e+6
-      do i=1,nsub
-         if(fsub(i).gt.fm) then
-            fm=fsub(i)
-            wm=wsub(i)
-         end if
-      end do
-     
-      return
-      end
-
       subroutine dota(ifile,idot)
 
       implicit none

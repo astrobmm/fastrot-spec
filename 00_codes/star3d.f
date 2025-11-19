@@ -479,7 +479,7 @@ C     Writing a small input file for spec3d.f
      +     'tiles.a:      parameters for each individual cell',/,
      +     'xyparams.a:   several parameters of the star to plot',/,
      +     '              3D graphs in 2D',/)
-      stop
+      
       end
       
       function radius(latd)

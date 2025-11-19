@@ -140,7 +140,13 @@ C     ---- HI-RES spectrum: initializing total flux
       end do
 
       ithold=-999.0
+      
+C     Opening a file to store xr, yr and the limb darkening
+C     correction at lambda 5000 A. This file is written just
+C     for plotting purposes if required.
 
+      open(unit=33,file='limbdark.a',form='formatted',status='unknown')
+            
 C     tiles.a:  the file containing information on the VISIBLE tiles
 C     is read out. Relevant parameters are the latitude of each 
 C     surface element, the projected area and the velocity shift to be
@@ -243,6 +249,12 @@ C     to the specific tile.
  
          wvp(i)=gamma*w(i)
          fareapn(i)=areapn*limbdark*f(i)
+
+C     Point 433 in the high-res spectra corresponds to lambda 5000 A
+       
+         if(i.eq.32851) write(33,330) xr,yr,limbdark
+ 330     format(3(1pe13.6,2x))
+         
       end do
 
 C     HI-RES spectrum: the wavelength mesh of the individual spectra
@@ -272,7 +284,8 @@ C     -----
       goto 3
       
  300  close(unit=3)
-
+      close(unit=33)
+      
 C     STORING HI-RES spectrum
       
       open(unit=13,file=outspec,form='formatted',status='unknown')      

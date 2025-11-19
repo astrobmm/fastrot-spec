@@ -37,7 +37,8 @@
       character*4  metal
       character*10 m(4)
       character*45 stin,stdum,sttpole,stlgpole,strpole,stom    
-      character*60 outspec,koutspec
+      character*60 outspec
+      character*70 koutspec
       character*65 s(1000),string(1000)
       
       parameter(c=299792.458)
@@ -154,6 +155,12 @@ C     ----- LOW-RES spectrum: initializing total flux
 
       ithold=-999.0
 
+C     Opening a file to store xr, yr and the limb darkening
+C     correction at lambda 5000 A. This file is written just
+C     for plotting purposes if required.
+
+      open(unit=33,file='limbdark.a',form='formatted',status='unknown')
+      
 C     tiles.a:  the file containing information on the VISIBLE tiles
 C     is read out. Relevant parameters are the latitude of each 
 C     surface element, the projected area and the velocity shift to be
@@ -292,6 +299,12 @@ C     ----- LOW-RES spectrum: Wavelengths and fluxes
      +               +ld3w*(1.0-mu**1.5)+ld4w*(1.0-mu**2))
  6       continue
          kfareapn(i)=areapn*limbdark*kf(i)
+
+C     Point 433 in the Kurucz spectra corresponds to lambda 5000 A
+       
+         if(i.eq.433) write(33,330) xr,yr,limbdark
+ 330     format(3(1pe13.6,2x))
+         
       end do
       
 C     LOW-RES spectrum: the individual spectra of each tile
@@ -307,10 +320,11 @@ C     -----
       goto 3
       
  300  close(unit=3)
+      close(unit=33)
       
 C     ----- STORING LOW-RES spectrum
       
-      koutspec='low-res'//outspec
+      koutspec='low-res-'//outspec
       open(unit=13,file=koutspec,form='formatted',status='unknown')      
       do i=1,nkur
          write(13,130) kw(i),kftot(i)
@@ -319,10 +333,10 @@ C     ----- STORING LOW-RES spectrum
  130  format(1pe14.8,2x,1pe13.6)
       
       write(*,131) koutspec,lum
- 131  format(/,86('-'),/,
-     +         ' Final LOW-RES spectrum is ',a60,/,
+ 131  format(/,92('-'),/,
+     +         ' Final LOW-RES spectrum is ',a70,/,
      +         ' Stellar luminosity L_star=',f8.3,' L_sun',/,
-     +         86('-'),/) 
+     +         92('-'),/) 
       end
 
 C     ----------------------------------------------------------
