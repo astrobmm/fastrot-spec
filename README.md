@@ -6,9 +6,13 @@ The parameterisation of the stellar surface is done using the semianalytical app
 
 The whole procedure is described in the paper "Surface parameterisation and spectral synthesis of rapidly rotating stars. Vega as a test bed" (Montesinos, B., 2024, Astronomy and Astrophysics, 688, A97). 
 
-June 2024: Programs ```star3d```, ```spec3d``` and ```normspec``` provided. Range of temperatures for the models: 7000-11000 K.
+June 2024: 
 
-October 2025: Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones are used; the new codes supersede the old ones. 
+  - Programs ```star3d```, ```spec3d``` and ```normspec``` provided. Range of temperatures for the models: 7000-11000 K.
+
+October 2025: 
+
+  - Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones     are used; the new codes supersede the old ones. 
 
   - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
   - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d``` to work.
