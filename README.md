@@ -22,8 +22,8 @@ November 2025:
 
   - Small modifications to create auxiliary files have been done on ```star3d```, ```lowrespec3d``` and ```highrespec3d```. The modifications do not affect the
     calculations of the final spectrum, and have been done for plotting purposes. The two shell files ```fastrot-highres-spec.sh```  and ```fastrot-lowres-spec.sh```
-    have been modified accordingly. I suggest to copy the whole contents of this folder to have consistent versions.
-  - Two additional programs have been added: ```grid10``` and ```mergefiles``` mainly devoted to generate some files for plotting purposes (see the information in
+    have been modified accordingly. If you have previous versions of the codes, update the whole contents of folder ```00_codes/``` to have consistent versions.
+    Two additional programs have been added: ```grid10``` and ```mergefiles``` mainly devoted to generate some files for plotting purposes (see all the information in
     the README file in folder ```00_codes/```).
   - The grid of synthetic spectra that is required to compute the composite final spectrum of a given object has been enlarged. See all the information in the
     README file in folder ```00_models/```.
