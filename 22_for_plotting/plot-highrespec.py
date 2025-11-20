@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+file1 = input("Filename of the high-resolution spectrum (.a): ")
+file2 = input("Filename of the normalized spectrum (.n1): ")
 
 # -----------------------
 # Load 2-column data file
@@ -11,8 +15,8 @@ import matplotlib.pyplot as plt
 # File *.n1: Col. 1: lambda (A)
 #            Col. 2: Normalized intensity
 
-data1 = np.loadtxt("in40.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v158.a")
-data2 = np.loadtxt("in40.0_m2.15_tpole10000_req2.726_mh-0.5_om0.632_v158.n1")
+data1 = np.loadtxt(file1)
+data2 = np.loadtxt(file2)
 
 wave1 = data1[:, 0]
 flux1 = data1[:, 1]
@@ -59,4 +63,7 @@ ax.tick_params(axis="y")
 
 plt.tight_layout()
 plt.show()
-fig.savefig('highres-spectrum.pdf', dpi=300, bbox_inches='tight')
+
+pdf_name = os.path.splitext(file1)[0] + ".pdf"
+
+fig.savefig(pdf_name, dpi=300, bbox_inches='tight')
