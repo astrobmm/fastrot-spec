@@ -12,20 +12,21 @@ June 2024:
 
 October 2025: 
 
-  - Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones     are used; the new codes supersede the old ones. 
-
+  - Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones
+    are used; the new codes supersede the old ones. 
   - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
   - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d``` to work.
   - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations.
 
 November 2025: 
 
-  - Small modifications to create auxiliary files have been done on ```lowrespec3d``` and ```highrespec3d```, so update these programs if you are using
-    previous versions.
+  - Small modifications to create auxiliary files have been done on ```star3d```, ```lowrespec3d``` and ```highrespec3d```. The modifications do not affect the
+    calculations of the final spectrum, and have been done for plotting purposes. The two shell files ```fastrot-highres-spec.sh```  and ```fastrot-lowres-spec.sh```
+    have been modified accordingly. I suggest to copy the whole contents of this folder to have consistent versions.
+  - Two additional programs have been added: ```grid10``` and ```mergefiles``` mainly devoted to generate some files for plotting purposes (see the information in
+    the README file in folder ```00_codes/```).
   - The grid of synthetic spectra that is required to compute the composite final spectrum of a given object has been enlarged. See all the information in the
     README file in folder ```00_models/```.
-  - Two additional programs have been added: ```grid10``` and ```mergefiles``` mainly devoted to generate some files for plotting purposes (see the information in
-    the README file in folder ```00_codes/```.
   - Python programs for plotting useful graphs and pdf examples of the output of these programs are provided in folder ```22_for_plotting/```. This is a new folder,
     follow the instruction given in the nexr paragraph.
 
