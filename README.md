@@ -14,7 +14,7 @@ October 2025:
 
   - Updates and improvements have been added with respect to the first versions of the codes. Use the new versions of the codes and scripts in case the original ones
     are used; the new codes supersede the old ones. 
-  - Program ```spec3d``` has been splitted into ```highrespec3d and ```lowrespec3d```.
+  - Program ```spec3d``` has been splitted into ```highrespec3d``` and ```lowrespec3d```.
   - Program ```star3d``` includes a small modification required for the new code ```lowrespec3d``` to work.
   - The computation of the limb darkening coefficients has been improved, attempting to gain speed in the calculations.
 
